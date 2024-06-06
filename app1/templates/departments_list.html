@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Departments</title>
+</head>
+<body>
+<a href="">Management System</a>
+<a href="/departments/">Departments</a>
+<a href="/login/">Login</a>
+
+<div>
+    <a href="/departments/add/">New Department</a>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in departments %}
+        <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.name }}</td>
+        <td>
+        <a href="/departments/{{ obj.id }}/edit">edit</a>
+        <a href="/departments/delete/?id={{ obj.id }}">delete</a>
+        </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
